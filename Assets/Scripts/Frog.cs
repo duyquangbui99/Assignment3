@@ -30,6 +30,11 @@ public class Frog : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.tag == "Limit")
+        {
+            this.gameObject.transform.position = new Vector2(0, -4);
+        }
+
         if (col.tag == "Car")
         {
             Score.CurrentLive -= 1;
